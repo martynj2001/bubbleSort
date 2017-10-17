@@ -11,7 +11,8 @@ def bubble_sort_by arrayTosort
 	while swappedflag do
 		swappedflag = false
 		(arraySize - 1).times do |i|
-			if yield(arrayTosort[i], arrayTosort[i + 1])
+			result = yield(arrayTosort[i], arrayTosort[i + 1])
+			if result > 0
 				arrayTosort[i], arrayTosort[i + 1] = arrayTosort[i + 1], arrayTosort[i]		
 				swappedflag = true
 			end
@@ -20,8 +21,9 @@ def bubble_sort_by arrayTosort
 	puts arrayTosort
 end
 	
-bubblesort([1,4,2,3]){|left, right| left > right}
-bubblesort([“yes”, “very large string”, “no”, “bigger”, “small”, “a”]) do |left, right| 
-		left.length right.length
-end
+
+bubble_sort_by(["one", "two", "three", "four", "five", "six", "seven", "eight","nine", "ten"]){|left, right| left.length - right.length}
+bubble_sort_by([1,4,2,3,5,8,5,0]){|left, right| left - right}
+
+
 			
