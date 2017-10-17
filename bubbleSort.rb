@@ -3,16 +3,16 @@ def bubblesort arrayTosort
 	swappedflag = true
 	arraySize = arrayTosort.length
 	
-	while flag do
+	while swappedflag do
 		swappedflag = false
 		(arraySize - 1).times do |i|
 			if arrayTosort[i] > arrayTosort[i + 1]
-				arrayToSort[i], arrayTosort[i + 1] = arrayToSort[i + 1], arrayTosort[i]
+				arrayTosort[i], arrayTosort[i + 1] = arrayTosort[i + 1], arrayTosort[i]
 				swappedflag = true
 			end
 		end		
 	end
-	arrayTosort
+	puts arrayTosort
 end
 	
 bubblesort([1,4,2,3])

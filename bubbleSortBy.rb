@@ -8,7 +8,7 @@ def bubble_sort_by arrayTosort
 	swappedflag = true
 	arraySize = arrayTosort.length
 	
-	while flag do
+	while swappedflag do
 		swappedflag = false
 		(arraySize - 1).times do |i|
 			if yield(arrayTosort[i], arrayTosort[i + 1])
@@ -17,11 +17,11 @@ def bubble_sort_by arrayTosort
 			end
 		end		
 	end
-	arrayTosort
+	puts arrayTosort
 end
 	
 bubblesort([1,4,2,3]){|left, right| left > right}
 bubblesort([“yes”, “very large string”, “no”, “bigger”, “small”, “a”]) do |left, right| 
-	left.length right.length
+		left.length right.length
 end
 			
